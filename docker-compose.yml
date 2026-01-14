@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  tax-tracker:
+    build: .
+    container_name: tax_tracker_v1
+    ports:
+      - "8501:8501"
+    volumes:
+      - tax_data_volume:/app/data
+    restart: unless-stopped
+
+volumes:
+  tax_data_volume:
